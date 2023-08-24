@@ -1,12 +1,13 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
-import { InputID } from "./components";
+import { InputID, WordTrash } from "./components";
 
 const FormStyled = styled.div`
     display: flex;
     flex-direction: column;
     row-gap: 10px;
     align-items: flex-start;
+    position: relative;
 
     > button {
         border: 1px solid #000;
@@ -21,6 +22,7 @@ const FormStyled = styled.div`
         align-self: flex-end;
         width: 100px;
         right: -50px;
+        z-index: 5;
     }
 `;
 
@@ -52,6 +54,7 @@ function App() {
 
     return (
         <FormStyled>
+            <WordTrash />
             <ItemStyled>
                 <InputID />
             </ItemStyled>

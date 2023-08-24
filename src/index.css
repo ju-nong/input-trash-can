@@ -17,3 +17,16 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+@keyframes word-trash {
+    0% {
+        visibility: visible;
+        top: 4px;
+        transform: rotate(0deg);
+    }
+    100% {
+        visibility: visible;
+        top: 150px;
+        transform: rotate(135deg);
+    }
+}
