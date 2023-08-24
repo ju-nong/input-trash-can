@@ -56,6 +56,10 @@ function App() {
         setTrash((trash) => [...trash, word]);
     }
 
+    function handleAlert() {
+        alert("404 not found");
+    }
+
     return (
         <FormStyled>
             {trash.map((item) => (
@@ -67,7 +71,7 @@ function App() {
             <ItemStyled>
                 <input type="password" placeholder="Password" />
             </ItemStyled>
-            <button>Sign Up</button>
+            <button onClick={handleAlert}>Sign Up</button>
             <img src="/images/trash-can.png" alt="trash-can" />
         </FormStyled>
     );
