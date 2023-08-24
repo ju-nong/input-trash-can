@@ -20,13 +20,17 @@ const InputIDStyled = styled.div`
 const BlockStyled = styled.span`
     position: absolute;
     z-index: 2;
-    width: 10px;
+    width: 12px;
     height: 100%;
     right: 0;
     background-color: #fff;
 `;
 
-function InputID() {
+interface InputIDProps {
+    onThrowAway: (word: string) => void;
+}
+
+function InputID({ onThrowAway }: InputIDProps) {
     const $input = useRef<HTMLDivElement | null>(null);
 
     function handleInput() {
@@ -36,7 +40,7 @@ function InputID() {
 
                 const { innerText } = $input.current;
 
-                // setTrash((trash) => [...trash, innerText.slice(-1)]);
+                onThrowAway(innerText.slice(-1));
 
                 $input.current.innerText = innerText.slice(
                     0,

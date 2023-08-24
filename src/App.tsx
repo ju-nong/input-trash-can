@@ -52,11 +52,17 @@ const ItemStyled = styled.div`
 function App() {
     const [trash, setTrash] = useState<string[]>([]);
 
+    function handleThrowAway(word: string) {
+        setTrash((trash) => [...trash, word]);
+    }
+
     return (
         <FormStyled>
-            <WordTrash />
+            {trash.map((item) => (
+                <WordTrash>{item}</WordTrash>
+            ))}
             <ItemStyled>
-                <InputID />
+                <InputID onThrowAway={handleThrowAway} />
             </ItemStyled>
             <ItemStyled>
                 <input type="password" placeholder="Password" />

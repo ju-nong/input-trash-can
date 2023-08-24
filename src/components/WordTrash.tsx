@@ -4,15 +4,15 @@ import styled from "@emotion/styled";
 const WordTrashStyled = styled.div`
     position: absolute;
     top: 4px;
-    right: 0;
-    border: 1px solid #000;
+    right: 0px;
     z-index: 3;
     visibility: hidden;
     animation: word-trash 1.5s;
+    transform-origin: bottom left;
 `;
 
-function WordTrash() {
-    return <WordTrashStyled>d</WordTrashStyled>;
+function WordTrash({ children }: { children: string }) {
+    return <WordTrashStyled>{children}</WordTrashStyled>;
 }
 
 export { WordTrash };
