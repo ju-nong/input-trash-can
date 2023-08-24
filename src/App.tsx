@@ -62,8 +62,8 @@ function App() {
 
     return (
         <FormStyled>
-            {trash.map((item) => (
-                <WordTrash>{item}</WordTrash>
+            {trash.map((item, index) => (
+                <WordTrash key={index}>{item}</WordTrash>
             ))}
             <ItemStyled>
                 <InputID onThrowAway={handleThrowAway} />
